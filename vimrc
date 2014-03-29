@@ -1,21 +1,60 @@
+" vimrc - Ondrej Sika, http://ondrejsika.com
+""""""""""""""""""""""""""""""""""""""""""""
 runtime! debian.vim
 
-syntax on
+" Configurations
+""""""""""""""""
 
+syntax on
+set wildmenu
+
+" Tab settings
 set tabstop=4 shiftwidth=4
 set expandtab
 
-set number
 
+" Search
 set ignorecase
 set incsearch
 set hlsearch
 
-set wildmenu
-
-set cursorline
-
+" Copy (scrolling, mouse, scrolling)
 set mouse=a
+set number
+
+" Trailing spaces
+highlight _trailing_spaces ctermbg=red guibg=red
+match _trailing_spaces /\s\+$/
+
+
+" Mapping
+"""""""""
+
+" Search
+map <c-f> /
+
+" Copy (scrolling, mouse, scrolling)
+map <c-n> :call _number_toggle() <lf>
+map <c-b> :call _mouse_toggle() <lf>
+
+
+" Trailing spaces
+nmap <c-t> :call _remove_trailing_spaces() <lf>
+
+" Insert tab
+imap <c-t> <tab>
+
+" Autocommands
+""""""""""""""
+
+
+" Functions
+"""""""""""
+
+function _remove_trailing_spaces()
+    :%s/\s\+$//e
+    echo "Trailing spaces removed"
+endfunction
 
 function _number_toggle()
     if &number == 0
@@ -24,8 +63,6 @@ function _number_toggle()
         set nonumber
     endif
 endfunction
-
-map <c-n> :call _number_toggle() <lf>
 
 function _mouse_toggle()
     if &mouse == 'a'
@@ -37,13 +74,10 @@ function _mouse_toggle()
     endif
 endfunction
 
-map <c-m> :call _mouse_toggle() <lf>
 
-map <c-f> /
+" ~/.vimrc
+""""""""""
 
-autocmd BufWritePre * :%s/\s\+$//e
-
-if filereadable("/etc/vim/vimrc.local")
-    source /etc/vim/vimrc.local
+if filereadable("~/.vimrc")
+    source ~/.vimrc
 endif
-
