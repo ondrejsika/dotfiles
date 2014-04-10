@@ -59,8 +59,10 @@ endfunction
 function _number_toggle()
     if &number == 0
         set number
+        echo "Show line numbers"
    else
         set nonumber
+        echo "Hide line numbers"
     endif
 endfunction
 
