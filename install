@@ -1,0 +1,33 @@
+#!/bin/sh
+
+time=`date +%s`
+suff=-${time}.dotfilesbkp
+
+# bashrc
+cp /home/sika/.bashrc /home/sika/.bashrc$suff
+rm /home/sika/.bashrc
+cp data/bashrc /home/sika/.bashrc
+
+# c
+cp data/c /usr/local/bin/c
+
+# i3
+cp /etc/i3/config /etc/i3/config$suff
+rm /etc/i3/config
+cp data/i3 /etc/i3/config
+
+# tmux
+cp /etc/tmux.conf /etc/tmux.conf$suff
+rm /etc/tmux.conf
+cp data/tmux.conf /etc/tmux.conf
+
+# vimrc
+cp /etc/vim/vimrc /etc/vim/vimrc-dotfilesbkp$suff
+rm /etc/vim/vimrc
+cp data/vimrc /etc/vim/vimrc
+
+# xrandr2
+cp /usr/local/bin/xrandr2 /usr/local/bin/xrandr2-dotfilesbkp$suff
+rm /usr/local/bin/xrandr2
+cp data/xrandr2 /usr/local/bin/xrandr2
+

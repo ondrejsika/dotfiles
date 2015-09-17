@@ -1,6 +1,9 @@
-" vimrc - Ondrej Sika, http://ondrejsika.com
-""""""""""""""""""""""""""""""""""""""""""""
+" vimrc
+" Ondrej Sika <ondrej@ondrejsika.com>
+"""""""""""""""""""""""""""""""""""""
+
 runtime! debian.vim
+set nocompatible
 
 " Configurations
 """"""""""""""""
@@ -8,10 +11,13 @@ runtime! debian.vim
 syntax on
 set wildmenu
 
+" Pathogen setup
+execute pathogen#infect()
+execute pathogen#helptags()
+
 " Tab settings
 set tabstop=4 shiftwidth=4
 set expandtab
-
 
 " Search
 set ignorecase
@@ -83,3 +89,4 @@ endfunction
 if filereadable("~/.vimrc")
     source ~/.vimrc
 endif
+

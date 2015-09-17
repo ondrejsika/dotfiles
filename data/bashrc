@@ -1,0 +1,202 @@
+# barshrc
+# Ondrej Sika <ondrej@ondrejsika.com>
+#####################################
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+export PATH=$PATH:/home/sika/bin
+
+alias cc="xclip -sel clip"
+
+alias serve="python -m SimpleHTTPServer"
+alias phpserve="php -S localhost:$1 $2"
+alias tl="telnet 127.0.0.1"
+
+alias activate="source .env/bin/activate"
+
+alias rmpyc="find . -name '*.pyc' -exec rm -rf {} \;"
+alias rmlog="find . -name '*.log' -exec rm -rf {} \;"
+alias rmswp="find . -name '*.swp' -exec rm -rf {} \;"
+alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
+
+alias st='git status'
+alias di='git diff'
+alias din='git --no-pager diff'
+alias dis='git diff --staged'
+alias disn='git --no-pager diff --staged'
+alias dit='git diff | tig'
+alias dist='git diff --staged | tig'
+alias ci='git commit'
+alias ad='git add'
+alias ft='git fetch'
+alias fa='git fetch --all'
+alias ga='gitk --all'
+alias ti="tig --all"
+alias fu="git fsu"
+
+alias ll='ls -al'
+
+alias osdrive="mc . sh://root@drive.ondrejsika.com/drive/"
+alias dr="mc . sh://root@drive.ondrejsika.com/static/dr.h4y.cz/"
+
+alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
+
+alias venv_gg365='source /home/sika/venv/gg365/bin/activate'
+alias venv_bitcoin_old='source /home/sika/venv/bitcoin-old/bin/activate'
+alias venv_bb='source /home/sika/venv/bb/bin/activate'
+
+
+alias ssh-aws='ssh -i .ssh/aws.pem '
+alias ssh-phplist='ssh -i .ssh/aws_phplist.pem '
+
+alias ssh_ann='ssh root@ann.srv.os1.cz'
+alias ssh_denca='ssh root@denca.srv.os1.cz'
+alias ssh_jana='ssh jana.srv.os1.cz'
+alias ssh_ivet='ssh root@ivet.srv.os1.cz'
+alias ssh_ivet_mc='mc . sh://root@ivet.srv.os1.cz'
+alias ssh_mathematica='ssh sikaondr@fray1.fit.cvut.cz -L 16286:leibniz.feld.cvut.cz:16286'
+alias ssh_ram2='ssh -A admin@ram2.bo'
+alias ssh_ram5='ssh -A admin@ram5.bo'
+
+alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
+
+alias stor_bo='sudo mount -t cifs -o uid=sika -o gid=sika //stor.bo/share /mnt/stor_bo/'
+
+alias vinotes='rm .notes.swp -f; vim notes'
+alias vitodo='rm .todo.swp -f; vim todo'
+alias viurls='rm .urls.swp -f; vim urls'
+
+alias py=python
+alias co=coffee
+alias js=nodejs
+alias ipy=ipython
+
+alias rfa='echo flushall | redis-cli'
+
+alias cd_pool='cd /home/projects/pool'
+alias cd_webpool='cd /home/projects/pool/web-pool'
+alias cd_stratum='cd /home/projects/pool/stratum-server'
+alias cd_blockchainhub='cd /home/projects/pool/blockchain-hub'
+alias cd_poolsrv='cd /home/projects/pool/lib-poolsrv'
+alias cd_grit='cd /home/projects/pool/lib-grit'
+alias cd_rootsrv='cd /home/projects/pool/root-server'
+
+alias bcl='bitcoin-cli -rpcconnect=ram5.bo -rpcport=8332 -rpcuser=btcrpc -rpcpassword=btc '
+alias bct='bitcoin-cli -rpcconnect=ram5.bo -rpcport=18332 -rpcuser=btcrpc -rpcpassword=btc '
+alias bcr='bitcoin-cli -rpcconnect=ram5.bo -rpcport=28332 -rpcuser=btcrpc -rpcpassword=btc '
+alias ncl='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=8336 -rpcuser=nmcrpc -rpcpassword=nmc '
+alias nct='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=18336 -rpcuser=nmcrpc -rpcpassword=nmc '
+alias ncr='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=28336 -rpcuser=nmcrpc -rpcpassword=nmc '
+
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+	color_prompt=yes
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)\$ '
