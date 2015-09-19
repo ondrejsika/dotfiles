@@ -5,8 +5,10 @@ suff=-${time}.dotfilesbkp
 
 # bashrc
 cp /home/sika/.bashrc /home/sika/.bashrc$suff
+chown sika:sika /home/sika/.bashrc$suff
 rm /home/sika/.bashrc
 cp data/bashrc /home/sika/.bashrc
+chown sika:sika /home/sika/.bashrc
 
 # c
 cp data/c /usr/local/bin/c
