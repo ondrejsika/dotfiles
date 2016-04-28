@@ -10,6 +10,7 @@ My configuration
 ```
 apt-get update
 apt-get install sudo puppet
+sudo puppet module install puppetlabs-stdlib
 
 git clone git@github.com:ondrejsika/dotfiles.git
 sudo puppet apply --modulepath '$basemodulepath:.' -e 'class {"dotfiles": }'

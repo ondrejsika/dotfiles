@@ -21,5 +21,14 @@ class dotfiles::core {
     content => template('dotfiles/core/c'),
   }
 
+  file_line {'ssh_authorized_key_sika':
+    path => '/home/sika/.ssh/authorized_keys',
+    line => template('dotfiles/core/id_rsa.pub'),
+  }->
+  file_line {'ssh_authorized_key_root':
+    path => '/root/.ssh/authorized_keys',
+    line => template('dotfiles/core/id_rsa.pub'),
+  }
+
 }
 
