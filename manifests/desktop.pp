@@ -1,4 +1,4 @@
-class desktop {
+class dotfiles::desktop {
   file { ['/etc/i3']:
     ensure => directory
   }->
