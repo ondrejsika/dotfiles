@@ -1,0 +1,13 @@
+{
+  "name": "ondrejsika-dotfiles",
+  "version": "0.0.0",
+  "author": "ondrej@ondrejsika.com",
+  "summary": "My PCs provisioning",
+  "license": "MIT",
+  "source": "https://github.com/ondrejsika/dotfiles",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [],
+  "data_provider": null
+}
+
