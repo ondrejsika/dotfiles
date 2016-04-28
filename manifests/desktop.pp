@@ -11,7 +11,12 @@ class desktop {
     ensure => file,
     mode => 755,
     content => template('dotfiles/desktop/xrandr2'),
-  }->
+  }
+
+  package { "zenity":
+    ensure => present,
+
+  }
   file { '/usr/local/bin/w':
     ensure => file,
     mode => 755,
