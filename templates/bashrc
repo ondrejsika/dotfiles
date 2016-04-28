@@ -50,7 +50,7 @@ alias venv_bb='source /home/sika/venv/bb/bin/activate'
 alias ssh-aws='ssh -i .ssh/aws.pem '
 alias ssh-phplist='ssh -i .ssh/aws_phplist.pem '
 
-alias ssh_ann='ssh root@ann.l.os1.cz'
+alias ssh_ann='ssh root@ann.srv.os1.cz'
 alias ssh_denca='ssh root@denca.srv.os1.cz'
 alias ssh_jana='ssh jana.srv.os1.cz'
 alias ssh_ivet='ssh root@ivet.srv.os1.cz'
@@ -58,9 +58,10 @@ alias ssh_ivet_mc='mc . sh://root@ivet.srv.os1.cz'
 alias ssh_mathematica='ssh sikaondr@fray1.fit.cvut.cz -L 16286:leibniz.feld.cvut.cz:16286'
 alias ssh_ram2='ssh -A admin@ram2.bo'
 alias ssh_ram5='ssh -A admin@ram5.bo'
-alias ssh_eprofi_cz='ssh eprofi@naran.codelab.cz'
-alias ssh_eprofi_sk='ssh eprofisk@naran.codelab.cz'
-alias ssh_eprofi_dev='ssh eprofi@naran2.codelab.cz'
+alias ssh_ram6='ssh -A admin@ram6.bo'
+alias ssh_ram7='ssh -A admin@ram7.bo'
+alias ssh_ram8='ssh -A admin@ram8.bo'
+alias db_rt3='mysql -upower_user -ppower_user_passwd -hram2.bo'
 
 alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
 
@@ -69,9 +70,6 @@ alias stor_bo='sudo mount -t cifs -o uid=sika -o gid=sika //stor.bo/share /mnt/s
 alias vinotes='rm .notes.swp -f; vim notes'
 alias vitodo='rm .todo.swp -f; vim todo'
 alias viurls='rm .urls.swp -f; vim urls'
-
-alias mc_mol_loc='mc . sh://192.168.1.51/mnt'
-
 
 alias py=python
 alias co=coffee
@@ -95,7 +93,24 @@ alias ncl='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=8336 -rpcuser
 alias nct='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=18336 -rpcuser=nmcrpc -rpcpassword=nmc '
 alias ncr='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=28336 -rpcuser=nmcrpc -rpcpassword=nmc '
 
+alias lbe_regtest='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9003 ram5.bo 28332 btcrpc btc'
+alias lbe_regtest_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9013 ram5.bo 28336 nmcrpc nmc'
+
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
+
+alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
+alias i3lock='i3lock -i bg2.png'
+
+
+alias ssh_ann='ssh root@ann.l.os1.cz'
+alias ssh_eprofi_cz='ssh eprofi@naran.codelab.cz'
+alias ssh_eprofi_sk='ssh eprofisk@naran.codelab.cz'
+alias ssh_eprofi_dev='ssh eprofi@naran2.codelab.cz'
+
+alias mc_mol_loc='mc . sh://192.168.1.51/mnt'
+alias lbe_regtest='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9003 ram5.bo 28332 btcrpc btc'
+alias lbe_regtest_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9013 ram5.bo 28336 nmcrpc nmc'
+alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
 
 # If not running interactively, don't do anything
 case $- in
@@ -142,16 +157,16 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
-	color_prompt=yes
+    color_prompt=yes
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -190,6 +205,10 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -211,5 +230,4 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 export NVM_DIR="/home/sika/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PYTHONSTARTUP=/home/sika/.pythonrc.py
 
