@@ -34,6 +34,11 @@ class dotfiles {
     ensure => file,
     mode => 755,
     content => template('dotfiles/xrandr2'),
+  }->
+  file { '/usr/local/bin/w':
+    ensure => file,
+    mode => 755,
+    content => template('dotfiles/w'),
   }
 
 }
