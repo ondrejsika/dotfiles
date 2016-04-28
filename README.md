@@ -8,6 +8,16 @@ My configuration
 ## Install
 
 ```
+apt-get update
+apt-get install sudo puppet
+
 git clone git@github.com:ondrejsika/dotfiles.git
 sudo puppet apply --modulepath '$basemodulepath:.' -e 'class {"dotfiles": }'
 ```
+
+# Build
+
+```
+puppet module build .
+```
+
