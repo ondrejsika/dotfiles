@@ -1,4 +1,7 @@
 class dotfiles::core {
+  package { 'vim':
+    ensure => present,
+  }->
   file { ['/etc/vim']:
     ensure => directory
   }->
@@ -9,6 +12,10 @@ class dotfiles::core {
   file { '/etc/bash.bashrc':
     ensure => file,
     content => template('dotfiles/core/bashrc'),
+  }
+
+  package { 'tmux':
+    ensure => present,
   }->
   file { '/etc/tmux.conf':
     ensure => file,

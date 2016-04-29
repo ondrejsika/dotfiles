@@ -9,7 +9,7 @@ My configuration
 
 ```
 apt-get update
-apt-get install sudo puppet
+apt-get install sudo puppet git
 sudo puppet module install puppetlabs-stdlib
 
 git clone git@github.com:ondrejsika/dotfiles.git

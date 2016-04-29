@@ -1,4 +1,7 @@
 class dotfiles::desktop {
+  package { ['i3', 'xorg']:
+    ensure => present,
+  }->
   file { ['/etc/i3']:
     ensure => directory
   }->
@@ -15,8 +18,7 @@ class dotfiles::desktop {
 
   package { "zenity":
     ensure => present,
-
-  }
+  }->
   file { '/usr/local/bin/w':
     ensure => file,
     mode => 755,
