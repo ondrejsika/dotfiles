@@ -22,18 +22,13 @@ alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
 
 alias st='git status'
 alias di='git diff'
-alias din='git --no-pager diff'
 alias dis='git diff --staged'
-alias disn='git --no-pager diff --staged'
 alias dit='git diff | tig'
 alias dist='git diff --staged | tig'
 alias ci='git commit'
 alias ad='git add'
-alias ft='git fetch'
-alias fa='git fetch --all'
+alias fa='git fetch --all --prune'
 alias ga='gitk --all'
-alias ti="tig --all"
-alias fu="git fsu"
 
 alias ll='ls -al'
 
