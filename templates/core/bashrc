@@ -96,8 +96,8 @@ alias ncr='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=28336 -rpcuse
 alias lbe_livenet='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9001 ram5.bo 8332 btcrpc btc'
 alias lbe_testnet='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9002 ram5.bo 18332 btcrpc btc'
 alias lbe_regtest='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9003 ram5.bo 28332 btcrpc btc'
-alias lbe_livenet_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9013 ram5.bo 8336 nmcrpc nmc'
-alias lbe_testnet_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9013 ram5.bo 18336 nmcrpc nmc'
+alias lbe_livenet_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9011 ram5.bo 8336 nmcrpc nmc'
+alias lbe_testnet_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9012 ram5.bo 18336 nmcrpc nmc'
 alias lbe_regtest_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9013 ram5.bo 28336 nmcrpc nmc'
 
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
