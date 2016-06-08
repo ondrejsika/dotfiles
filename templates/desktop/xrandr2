@@ -5,7 +5,8 @@ then
     xrandr --output LVDS1 --off --output HDMI2 --mode 1920x1080
 elif [ "$1" = "braiins" ]
 then
-    xrandr --auto --output LVDS1 --mode 1366x768 --output HDMI2 --mode 1920x1080 --left-of LVDS1
+    xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1
+    #xrandr --auto --output LVDS1 --mode 1366x768 --output HDMI2 --mode 1920x1080 --left-of LVDS1
     #xrandr --auto --output HDMI2 --mode 1920x1080 --output DP1 --mode 1920x1200 --left-of HDMI2 --output LVDS1 --off
     #xrandr --auto --output LVDS1 --mode 1366x768 --output HDMI2 --mode 1920x1080 --left-of LVDS1
     #xrandr --auto --output LVDS1 --mode 1366x768 --output DP1 --mode 1920x1200 --right-of LVDS1
