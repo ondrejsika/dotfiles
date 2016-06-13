@@ -16,6 +16,7 @@ alias tl="telnet 127.0.0.1"
 alias activate="source .env/bin/activate"
 
 alias rmpyc="find . -name '*.pyc' -exec rm -rf {} \;"
+alias rmpyo="find . -name '*.pyo' -exec rm -rf {} \;"
 alias rmlog="find . -name '*.log' -exec rm -rf {} \;"
 alias rmswp="find . -name '*.swp' -exec rm -rf {} \;"
 alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
