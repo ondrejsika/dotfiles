@@ -25,5 +25,9 @@ class dotfiles::desktop {
     content => template('dotfiles/desktop/w'),
   }
 
+  file { '/etc/bash.settitle':
+    ensure => file,
+    content => template('dotfiles/desktop/settitle'),
+  }
 }
 

@@ -110,6 +110,9 @@ alias ssh_eprofi_dev='ssh eprofi@naran2.codelab.cz'
 alias mc_mol_loc='mc . sh://192.168.1.51/mnt'
 alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
 
+
+alias settitle='. /etc/bash.settitle'
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
