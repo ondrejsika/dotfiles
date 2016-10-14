@@ -33,25 +33,21 @@ alias ga='gitk --all'
 
 alias ll='ls -al'
 
-alias osdrive="mc . sh://root@drive.ondrejsika.com/drive/"
-alias dr="mc . sh://root@drive.ondrejsika.com/static/dr.h4y.cz/"
+alias mc_drive="mc . sh://root@ann.l.oxs.cz/drive/"
+alias mc_dr="mc . sh://root@ann.l.oxs.cz/static/dr.h4y.cz/"
 
 alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
-
-alias venv_gg365='source /home/sika/venv/gg365/bin/activate'
-alias venv_bitcoin_old='source /home/sika/venv/bitcoin-old/bin/activate'
-alias venv_bb='source /home/sika/venv/bb/bin/activate'
-
 
 alias ssh-aws='ssh -i .ssh/aws.pem '
 alias ssh-phplist='ssh -i .ssh/aws_phplist.pem '
 
-alias ssh_ann='ssh root@ann.srv.os1.cz'
-alias ssh_denca='ssh root@denca.srv.os1.cz'
-alias ssh_jana='ssh jana.srv.os1.cz'
-alias ssh_ivet='ssh root@ivet.srv.os1.cz'
-alias ssh_ivet_mc='mc . sh://root@ivet.srv.os1.cz'
+alias ssh_ann='ssh -A -X root@ann.l.oxs.cz'
+alias ssh_bar='ssh -A -X root@bar.l.oxs.cz'
+alias ssh_bar-proxy='ssh -A -X root@ann.l.oxs.cz -p 9922'
+alias ssh_bar-php='ssh -A -X root@ann.l.oxs.cz -p 9928'
+
 alias ssh_mathematica='ssh sikaondr@fray1.fit.cvut.cz -L 16286:leibniz.feld.cvut.cz:16286'
+alias ssh_x1='ssh -A -X sika@sika-x1.bo'
 alias ssh_ram2='ssh -A admin@ram2.bo'
 alias ssh_ram5='ssh -A admin@ram5.bo'
 alias ssh_ram6='ssh -A admin@ram6.bo'
@@ -88,6 +84,9 @@ alias bcr='bitcoin-cli -rpcconnect=ram5.bo -rpcport=28332 -rpcuser=btcrpc -rpcpa
 alias ncl='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=8336 -rpcuser=nmcrpc -rpcpassword=nmc '
 alias nct='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=18336 -rpcuser=nmcrpc -rpcpassword=nmc '
 alias ncr='/opt/namecoin/namecoin-cli -rpcconnect=ram5.bo -rpcport=28336 -rpcuser=nmcrpc -rpcpassword=nmc '
+alias zcl='/opt/zcash/zcash-cli -rpcconnect=ram5.bo -rpcport=8232 -rpcuser=zu -rpcpassword=zp '
+alias zct='/opt/zcash/zcash-cli -rpcconnect=ram5.bo -rpcport=18232 -rpcuser=zu -rpcpassword=zp '
+alias zcr='/opt/zcash/zcash-cli -rpcconnect=ram5.bo -rpcport=28232 -rpcuser=zu -rpcpassword=zp '
 
 alias lbe_livenet='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9001 ram5.bo 8332 btcrpc btc'
 alias lbe_testnet='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9002 ram5.bo 18332 btcrpc btc'
@@ -95,17 +94,15 @@ alias lbe_regtest='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 
 alias lbe_livenet_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9011 ram5.bo 8336 nmcrpc nmc'
 alias lbe_testnet_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9012 ram5.bo 18336 nmcrpc nmc'
 alias lbe_regtest_nmc='/home/projects/lbe/.env/bin/python /home/projects/lbe/lbe.py 0.0.0.0 9013 ram5.bo 28336 nmcrpc nmc'
+alias lbe_livenet_zcash='/home/projects/lbe-zcash/.env/bin/python /home/projects/lbe-zcash/lbe.py 0.0.0.0 9021 ram5.bo 8232 zu zp'
+alias lbe_testnet_zcash='/home/projects/lbe-zcash/.env/bin/python /home/projects/lbe-zcash/lbe.py 0.0.0.0 9022 ram5.bo 18232 zu zp'
+alias lbe_regtest_zcash='/home/projects/lbe-zcash/.env/bin/python /home/projects/lbe-zcash/lbe.py 0.0.0.0 9023 ram5.bo 28232 zu zp'
 
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
 
 alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
 alias i3lock='i3lock -i bg2.png'
 
-
-alias ssh_ann='ssh root@ann.l.os1.cz'
-alias ssh_eprofi_cz='ssh eprofi@naran.codelab.cz'
-alias ssh_eprofi_sk='ssh eprofisk@naran.codelab.cz'
-alias ssh_eprofi_dev='ssh eprofi@naran2.codelab.cz'
 
 alias mc_mol_loc='mc . sh://192.168.1.51/mnt'
 alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
