@@ -1,4 +1,4 @@
 class dotfiles {
-    class {"core": }
-    class {"desktop": }
+    class {"dotfiles::core": }
+    class {"dotfiles::desktop": }
 }

@@ -12,7 +12,7 @@ class dotfiles::desktop {
 
   file { '/usr/local/bin/xrandr2':
     ensure => file,
-    mode => 755,
+    mode => '755',
     content => template('dotfiles/desktop/xrandr2'),
   }
 
@@ -21,7 +21,7 @@ class dotfiles::desktop {
   }->
   file { '/usr/local/bin/w':
     ensure => file,
-    mode => 755,
+    mode => '755',
     content => template('dotfiles/desktop/w'),
   }
 

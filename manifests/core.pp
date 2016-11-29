@@ -24,7 +24,7 @@ class dotfiles::core {
 
   file { '/usr/local/bin/c':
     ensure => file,
-    mode => 755,
+    mode => '755',
     content => template('dotfiles/core/c'),
   }
 
