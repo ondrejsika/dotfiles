@@ -13,7 +13,9 @@ apt-get install sudo puppet git
 sudo puppet module install puppetlabs-stdlib
 
 git clone git@github.com:ondrejsika/dotfiles.git
-sudo puppet apply --modulepath '$basemodulepath:.' -e 'class {"dotfiles": }'
+cd dotfiles
+git clone git@github.com:ondrejsika/dotfiles-hiera.git hiera
+sudo puppet apply --modulepath '$basemodulepath:..' -e 'class {"dotfiles": }' --hiera_config hiera.yaml
 ```
 
 # Build

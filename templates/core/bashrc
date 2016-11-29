@@ -33,27 +33,17 @@ alias ga='gitk --all'
 
 alias ll='ls -al'
 
-alias mc_drive="mc . sh://root@ann.l.oxs.cz/drive/"
-alias mc_dr="mc . sh://root@ann.l.oxs.cz/static/dr.h4y.cz/"
+<%- for drive in scope().call_function('hiera',["drives"]) -%>
+alias mc_<%= drive['name'] %>='mc . sh://<%= drive['ssh'] %>'
+<%- end -%>
 
 alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
-alias ssh-aws='ssh -i .ssh/aws.pem '
-alias ssh-phplist='ssh -i .ssh/aws_phplist.pem '
-
-alias ssh_ann='ssh -A -X root@ann.l.oxs.cz'
-alias ssh_bar='ssh -A -X root@bar.l.oxs.cz'
-alias ssh_bar-proxy='ssh -A -X root@ann.l.oxs.cz -p 9922'
-alias ssh_bar-php='ssh -A -X root@ann.l.oxs.cz -p 9928'
-
-alias ssh_mathematica='ssh sikaondr@fray1.fit.cvut.cz -L 16286:leibniz.feld.cvut.cz:16286'
-alias ssh_x1='ssh -A -X sika@sika-x1.bo'
-alias ssh_ram2='ssh -A admin@ram2.bo'
-alias ssh_ram5='ssh -A admin@ram5.bo'
-alias ssh_ram6='ssh -A admin@ram6.bo'
-alias ssh_ram7='ssh -A admin@ram7.bo'
-alias ssh_ram8='ssh -A admin@ram8.bo'
 alias db_rt3='mysql -upower_user -ppower_user_passwd -hram2.bo'
+
+<%- for server in scope().call_function('hiera',["servers"]) -%>
+alias ssh_<%= server['name'] %>='ssh -A <%= server['ssh'] %>'
+<%- end -%>
 
 alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
 
