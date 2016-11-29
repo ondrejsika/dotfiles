@@ -163,6 +163,7 @@ bar {
     output DP2
     output VGA1
     output LVDS1
+    output LVDS-1
     output DVI-I-1
     output DVI-I-2
     status_command i3status
