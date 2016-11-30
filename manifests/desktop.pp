@@ -29,5 +29,37 @@ class dotfiles::desktop {
     ensure => file,
     content => template('dotfiles/desktop/settitle'),
   }
+
+  $install_packages = [
+    'gnome-terminal',
+    'gnome-disk-utility',
+    'openjdk-8-jre',
+    'texlive-latex-base',
+    'texlive-latex-extra',
+    'gnupg',
+    'libreoffice',
+    'openvpn',
+    'dnsmasq',
+    'moc',
+    'vlc',
+    'evince',
+    'gimp',
+    'wicd',
+    'wicd-cli',
+    'wicd-gtk',
+    'gitk',
+    'xbacklight',
+    'lxrandr',
+    'gpa',
+  ];
+  package { $install_packages:
+    ensure => installed,
+  }
+
+  $purged_packages = [
+  ];
+  package { $purged_packages:
+    ensure => purged,
+  }
 }
 

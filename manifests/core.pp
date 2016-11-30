@@ -44,5 +44,28 @@ class dotfiles::core {
     line => template('dotfiles/core/id_rsa.pub'),
   }
 
+  $install_packages = [
+    'ipython',
+    'gcc',
+    'mc',
+    'htop',
+    'git',
+    'sudo',
+    'puppet',
+    'tig',
+    'python-dev',
+    'python-pip',
+    'curl',
+  ];
+  package { $install_packages:
+    ensure => installed,
+  }
+
+  $purged_packages = [
+    'nano',
+  ];
+  package { $purged_packages:
+    ensure => purged,
+  }
 }
 
