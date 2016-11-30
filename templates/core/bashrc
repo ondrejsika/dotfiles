@@ -47,7 +47,9 @@ alias ssh_<%= server['name'] %>='ssh -A <%= server['ssh'] %>'
 
 alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
 
-alias stor_bo='sudo mount -t cifs -o uid=sika -o gid=sika //stor.bo/share /mnt/stor_bo/'
+<%- for server in scope().call_function('hiera',["samba_servers"]) -%>
+alias mount_<%= server['name'] %>='sudo mkdir -p <%= server['mountpoint'] %> && sudo mount -t cifs -o uid=sika -o gid=sika <%= server['url'] %> <%= server['mountpoint'] %>'
+<%- end -%>
 
 alias vinotes='rm .notes.swp -f; vim notes'
 alias vitodo='rm .todo.swp -f; vim todo'

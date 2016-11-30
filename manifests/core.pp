@@ -61,6 +61,9 @@ class dotfiles::core {
     'python-dev',
     'python-pip',
     'curl',
+
+    'cifs-utils',
+    'nfs-common',
   ];
   package { $install_packages:
     ensure => installed,
