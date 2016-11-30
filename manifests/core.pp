@@ -2,13 +2,18 @@ class dotfiles::core {
   package { 'vim':
     ensure => present,
   }->
-  file { ['/etc/vim']:
+  file { ['/etc/vim', '/etc/vim/autoload', '/etc/vim/bundle']:
     ensure => directory
   }->
   file { '/etc/vim/vimrc':
     ensure => file,
     content => template('dotfiles/core/vimrc'),
   }->
+  file { '/etc/vim/autoload/pathogen.vim':
+    ensure => file,
+    content => template('dotfiles/core/3rdparty/pathogen.vim'),
+  }
+
   file { '/etc/bash.bashrc':
     ensure => file,
     content => template('dotfiles/core/bashrc'),
