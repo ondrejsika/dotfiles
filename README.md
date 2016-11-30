@@ -17,19 +17,19 @@ cd dotfiles
 git clone git@github.com:ondrejsika/dotfiles-hiera.git hiera
 ```
 
-# Apply Server
+## Apply Server
 
 ```
 sudo puppet apply --modulepath '$basemodulepath:..' -e 'class {"dotfiles::install::server": }' --hiera_config hiera.yaml
 ```
 
-# Apply Desktop
+## Apply Desktop
 
 ```
 sudo puppet apply --modulepath '$basemodulepath:..' -e 'class {"dotfiles::install::desktop": }' --hiera_config hiera.yaml
 ```
 
-# Build
+## Build
 
 ```
 puppet module build .
