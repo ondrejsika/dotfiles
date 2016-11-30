@@ -51,6 +51,10 @@ class dotfiles::desktop {
     'xbacklight',
     'lxrandr',
     'gpa',
+    'eog',
+    'chromium',
+    'icedove',
+    'vim-gtk',
   ];
   package { $install_packages:
     ensure => installed,
