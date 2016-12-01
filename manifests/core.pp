@@ -53,6 +53,7 @@ class dotfiles::core {
   }
 
   $install_packages = [
+    'aptitude',
     'ipython',
     'gcc',
     'mc',
@@ -64,6 +65,9 @@ class dotfiles::core {
     'python-dev',
     'python-pip',
     'curl',
+
+    'nodejs',
+    'npm',
 
     'cifs-utils',
     'nfs-common',
