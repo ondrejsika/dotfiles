@@ -1,4 +1,7 @@
 class dotfiles::core {
+  $servers = hiera('servers')
+  $samba_servers = hiera('samba_servers')
+  $drives = hiera('drives')
   package { 'vim':
     ensure => present,
   }->
@@ -64,14 +67,14 @@ class dotfiles::core {
 
     'cifs-utils',
     'nfs-common',
-  ];
+  ]
   package { $install_packages:
     ensure => installed,
   }
 
   $purged_packages = [
     'nano',
-  ];
+  ]
   package { $purged_packages:
     ensure => purged,
   }

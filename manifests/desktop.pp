@@ -55,13 +55,13 @@ class dotfiles::desktop {
     'chromium',
     'icedove',
     'vim-gtk',
-  ];
+  ]
   package { $install_packages:
     ensure => installed,
   }
 
   $purged_packages = [
-  ];
+  ]
   package { $purged_packages:
     ensure => purged,
   }

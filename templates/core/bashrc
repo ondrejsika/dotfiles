@@ -33,7 +33,7 @@ alias ga='gitk --all'
 
 alias ll='ls -al'
 
-<%- for drive in scope().call_function('hiera',["drives"]) -%>
+<%- for drive in @drives -%>
 alias mc_<%= drive['name'] %>='mc . sh://<%= drive['ssh'] %>'
 <%- end -%>
 
@@ -41,13 +41,13 @@ alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
 alias db_rt3='mysql -upower_user -ppower_user_passwd -hram2.bo'
 
-<%- for server in scope().call_function('hiera',["servers"]) -%>
+<%- for server in @servers -%>
 alias ssh_<%= server['name'] %>='ssh -A <%= server['ssh'] %>'
 <%- end -%>
 
 alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
 
-<%- for server in scope().call_function('hiera',["samba_servers"]) -%>
+<%- for server in @samba_servers -%>
 alias mount_<%= server['name'] %>='sudo mkdir -p <%= server['mountpoint'] %> && sudo mount -t cifs -o uid=sika -o gid=sika <%= server['url'] %> <%= server['mountpoint'] %>'
 <%- end -%>
 
