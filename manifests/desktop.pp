@@ -55,6 +55,7 @@ class dotfiles::desktop {
     'chromium',
     'icedove',
     'vim-gtk',
+    'virt-manager',
   ]
   package { $install_packages:
     ensure => installed,
