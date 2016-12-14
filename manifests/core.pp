@@ -71,9 +71,20 @@ class dotfiles::core {
 
     'cifs-utils',
     'nfs-common',
+
+    'ruby',
+    'ruby-dev',
   ]
   package { $install_packages:
     ensure => installed,
+  }
+
+  $install_gem_packages = [
+    'jekyll',
+  ]
+  package { $install_gem_packages:
+    ensure => installed,
+    provider => gem,
   }
 
   $purged_packages = [
