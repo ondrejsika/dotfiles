@@ -10,6 +10,23 @@ class dotfiles::desktop {
     content => template('dotfiles/desktop/i3'),
   }
 
+   service { 'dnsmasq':
+    ensure  => 'running',
+    enable  => true,
+    require => Package['dnsmasq'],
+  }
+
+  file { '/etc/reslv.conf':
+    ensure => file,
+    content => '127.0.0.1',
+  }->
+  file { '/etc/dnsmasq.conf':
+    notify => Service['dnsmasq'],
+    ensure => file,
+    content => template('dotfiles/desktop/dnsmasq.conf')
+
+  }
+
   file { '/usr/local/bin/xrandr2':
     ensure => file,
     mode => '755',
