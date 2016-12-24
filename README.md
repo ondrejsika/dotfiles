@@ -20,13 +20,13 @@ git clone git@github.com:ondrejsika/dotfiles-hiera.git hiera
 ## Apply Server
 
 ```
-sudo puppet apply --modulepath '$basemodulepath:..' -e 'class {"dotfiles::install::server": }' --hiera_config hiera.yaml
+sudo ./apply-server.sh
 ```
 
 ## Apply Desktop
 
 ```
-sudo puppet apply --modulepath '$basemodulepath:..' -e 'class {"dotfiles::install::desktop": }' --hiera_config hiera.yaml
+sudo ./apply-desktop.sh
 ```
 
 ## Build
