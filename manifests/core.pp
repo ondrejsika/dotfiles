@@ -65,6 +65,7 @@ class dotfiles::core {
     'python-dev',
     'python-pip',
     'curl',
+    'tree',
 
     'nodejs',
     'npm',
