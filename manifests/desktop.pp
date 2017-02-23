@@ -47,6 +47,21 @@ class dotfiles::desktop {
     content => template('dotfiles/desktop/settitle'),
   }
 
+
+  file_line {'source.list':
+    path => '/etc/apt/sources.list',
+    line => 'deb http://download.virtualbox.org/virtualbox/debian stretch contrib',
+  } ->
+  exec { 'apt-key adv --fetch-keys https://www.virtualbox.org/download/oracle_vbox_2016.asc':
+    path => '/bin',
+  } ->
+  exec { 'apt-get update':
+    path => '/bin',
+  } ->
+  package { 'virtualbox-5.1':
+    ensure => installed,
+  }
+
   $install_packages = [
     'gnome-terminal',
     'gnome-disk-utility',
