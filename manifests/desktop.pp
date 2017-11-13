@@ -88,6 +88,7 @@ class dotfiles::desktop {
     'thunderbird',
     'vim-gtk',
     'virt-manager',
+    'alsa-utils',
   ]
   package { $install_packages:
     ensure => installed,
