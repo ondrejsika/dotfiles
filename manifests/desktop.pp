@@ -48,16 +48,15 @@ class dotfiles::desktop {
   }
 
 
-  file_line {'source.list':
-    path => '/etc/apt/sources.list',
-    line => 'deb http://download.virtualbox.org/virtualbox/debian stretch contrib',
-  } ->
-  exec { 'apt-key adv --fetch-keys https://www.virtualbox.org/download/oracle_vbox_2016.asc':
-    path => '/bin',
-  } ->
-  exec { 'apt-get update':
-    path => '/bin',
-  } ->
+  apt::source { 'virtualbox':
+    location => 'http://download.virtualbox.org/virtualbox/debian',
+    repos    => 'contrib',
+    release  => 'stretch',
+    key      => {
+      id       => 'B9F8D658297AF3EFC18D5CDFA2F683C52980AECF',
+      'server' => 'pgp.mit.edu',
+    },
+  }->
   package { 'virtualbox-5.1':
     ensure => installed,
   }
