@@ -93,5 +93,22 @@ class dotfiles::core {
   package { $purged_packages:
     ensure => purged,
   }
+
+  sudo::conf {'sudoers':
+     ensure  => present,
+     content => 'sika ALL=(ALL) ALL',
+  }
+
+
+  git::config { 'user.name':
+    value => 'Ondrej Sika',
+    scope => 'system',
+  }
+
+  git::config { 'user.email':
+    value => 'ondrej@ondrejsika.com',
+    scope => 'system',
+  }
+
 }
 
