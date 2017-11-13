@@ -98,5 +98,24 @@ class dotfiles::desktop {
   package { $purged_packages:
     ensure => purged,
   }
+
+  apt::source { 'spotify':
+    location => 'http://repository.spotify.com',
+    repos    => 'non-free',
+    release  => 'stable',
+    key      => {
+      id       => '0DF731E45CE24F27EEEB1450EFDC8610341D9410',
+      'server' => 'pgp.mit.edu',
+    },
+  }->
+  apt::source { 'jessie-backports':
+    location => 'http://ftp.debian.org/debian',
+    repos    => 'main',
+    release  => 'jessie-backports',
+  }->
+  package { 'spotify-client':
+    ensure => installed,
+  }
+
 }
 
