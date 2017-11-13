@@ -85,7 +85,7 @@ class dotfiles::desktop {
     'gpa',
     'eog',
     'chromium',
-    'icedove',
+    'thunderbird',
     'vim-gtk',
     'virt-manager',
   ]

@@ -60,7 +60,6 @@ class dotfiles::core {
     'htop',
     'git',
     'sudo',
-    'puppet',
     'tig',
     'python-dev',
     'python-pip',
@@ -69,7 +68,6 @@ class dotfiles::core {
     'vnstat',
 
     'nodejs',
-    'npm',
 
     'cifs-utils',
     'nfs-common',
