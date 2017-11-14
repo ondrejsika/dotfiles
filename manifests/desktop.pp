@@ -117,5 +117,21 @@ class dotfiles::desktop {
     ensure => installed,
   }
 
+  package { "apt-transport-https":
+    ensure => installed,
+  }->
+  apt::source { 'ondrejsika':
+    location => 'http://deb.oxs.cz',
+    repos    => 'main',
+    release  => 'stretch',
+    key      => {
+      id       => '682CB16A64DCE7793BC009C4D5BF4C0F39A47B32',
+      'server' => 'pgp.mit.edu',
+    },
+  }->
+  package { "telegram":
+    ensure => installed,
+  }
+
 }
 
