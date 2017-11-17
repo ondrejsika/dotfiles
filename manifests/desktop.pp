@@ -129,8 +129,8 @@ class dotfiles::desktop {
       'server' => 'pgp.mit.edu',
     },
   }->
-  package { "telegram":
-    ensure => installed,
+  package { ["telegram", "pycharm", "clion"]:
+    ensure => latest,
   }
 
 }
