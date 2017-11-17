@@ -1,4 +1,9 @@
 class dotfiles::core {
+  exec { "apt-update":
+    command => "/usr/bin/apt-get update"
+  }
+  Exec["apt-update"] -> Package <| |>
+
   $servers = hiera('servers')
   $samba_servers = hiera('samba_servers')
   $drives = hiera('drives')
