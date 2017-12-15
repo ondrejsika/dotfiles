@@ -129,7 +129,7 @@ class dotfiles::desktop {
       'server' => 'pgp.mit.edu',
     },
   }->
-  package { ["telegram", "pycharm", "clion"]:
+  package { ["telegram", "pycharm", "clion", "datagrip"]:
     ensure => latest,
   }
 
