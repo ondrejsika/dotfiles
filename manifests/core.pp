@@ -4,9 +4,9 @@ class dotfiles::core {
   }
   Exec["apt-update"] -> Package <| |>
 
-  $servers = hiera('servers')
-  $samba_servers = hiera('samba_servers')
-  $drives = hiera('drives')
+  $servers = lookup('servers')
+  $samba_servers = lookup('samba_servers')
+  $drives = lookup('drives')
   package { 'vim':
     ensure => present,
   }->
