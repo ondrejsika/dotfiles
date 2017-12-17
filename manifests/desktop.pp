@@ -88,6 +88,7 @@ class dotfiles::desktop {
     'vim-gtk',
     'virt-manager',
     'alsa-utils',
+    'gitstats',
   ]
   package { $install_packages:
     ensure => installed,
