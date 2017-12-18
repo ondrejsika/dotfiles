@@ -146,5 +146,21 @@ class dotfiles::desktop {
     ensure => latest,
   }
 
+  file { "/etc/resolv.conf":
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template("dotfiles/desktop/resolv.conf"),
+    require => Exec['remove_immutable_bit'],
+  }
+  exec { "chattr":
+    command => "/usr/bin/chattr +i /etc/resolv.conf",
+    subscribe => File["/etc/resolv.conf"],
+  }
+  exec { "remove_immutable_bit":
+    command => "/usr/bin/chattr -i /etc/resolv.conf",
+  }
+
 }
 
