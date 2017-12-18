@@ -132,6 +132,18 @@ class dotfiles::desktop {
   }->
   package { ["telegram", "pycharm", "clion", "datagrip"]:
     ensure => latest,
+  }->
+  apt::source { 'sublime-text':
+    location => 'https://download.sublimetext.com',
+    repos    => '',
+    release  => 'apt/stable/',
+    key      => {
+      id       => '1EDDE2CDFC025D17F6DA9EC0ADAE6AD28A8F901A',
+      'server' => 'pgp.mit.edu',
+    },
+  }->
+  package { ["sublime-text"]:
+    ensure => latest,
   }
 
 }
