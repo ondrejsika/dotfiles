@@ -4,7 +4,6 @@ class dotfiles::core {
   }
   Exec["apt-update"] -> Package <| |>
 
-  $servers = lookup('servers')
   $samba_servers = lookup('samba_servers')
   $drives = lookup('drives')
   package { 'vim':

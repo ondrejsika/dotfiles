@@ -43,10 +43,6 @@ alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
 alias db_rt3='mysql -upower_user -ppower_user_passwd -hram2.bo'
 
-<%- for server in @servers -%>
-alias ssh_<%= server['name'] %>='ssh -A <%= server['ssh'] %>'
-<%- end -%>
-
 alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
 
 <%- for server in @samba_servers -%>
