@@ -70,6 +70,8 @@ class dotfiles::core {
 
     'ruby',
     'ruby-dev',
+
+    'httpie',
   ]
   package { $install_packages:
     ensure => installed,
