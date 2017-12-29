@@ -20,11 +20,14 @@ class dotfiles::desktop {
     ensure => file,
     content => '127.0.0.1',
   }->
+  file { '/etc/hosts.dnsmasq':
+    ensure => file,
+    content => template('dotfiles/desktop/hosts.dnsmasq')
+  }->
   file { '/etc/dnsmasq.conf':
     notify => Service['dnsmasq'],
     ensure => file,
     content => template('dotfiles/desktop/dnsmasq.conf')
-
   }
 
   file { '/usr/local/bin/xrandr2':
