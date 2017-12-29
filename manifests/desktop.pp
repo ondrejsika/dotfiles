@@ -89,6 +89,7 @@ class dotfiles::desktop {
     'virt-manager',
     'alsa-utils',
     'gitstats',
+    'sqlitebrowser',
   ]
   package { $install_packages:
     ensure => installed,
