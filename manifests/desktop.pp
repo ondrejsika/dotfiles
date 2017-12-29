@@ -62,6 +62,8 @@ class dotfiles::desktop {
   }
 
   $install_packages = [
+    'xterm',  # in case of gnome-terminal error
+    'dbus-x11',  # required by gnome-terminal (doesn't start without it)
     'gnome-terminal',
     'gnome-disk-utility',
     'openjdk-8-jre',
