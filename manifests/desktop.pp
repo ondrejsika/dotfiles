@@ -95,6 +95,7 @@ class dotfiles::desktop {
     'alsa-utils',
     'gitstats',
     'sqlitebrowser',
+    'ffmpeg',  # ffprobe for youtube-dl (mp3)
   ]
   package { $install_packages:
     ensure => installed,
