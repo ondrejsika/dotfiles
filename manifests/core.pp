@@ -62,6 +62,7 @@ class dotfiles::core {
     'curl',
     'tree',
     'vnstat',
+    'whois',
 
     'nodejs',
 
