@@ -96,6 +96,7 @@ class dotfiles::desktop {
     'gitstats',
     'sqlitebrowser',
     'ffmpeg',  # ffprobe for youtube-dl (mp3)
+    'nmap',
   ]
   package { $install_packages:
     ensure => installed,
