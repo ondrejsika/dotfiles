@@ -141,6 +141,18 @@ class dotfiles::desktop {
   package { ["telegram", "pycharm", "clion", "datagrip"]:
     ensure => latest,
   }->
+  apt::source { 'ondrejsika-3rdparties':
+    location => 'http://deb.oxs.cz/3rd',
+    repos    => 'main',
+    release  => 'stretch',
+    key      => {
+      id       => '682CB16A64DCE7793BC009C4D5BF4C0F39A47B32',
+      'server' => 'pgp.mit.edu',
+    },
+  }->
+  package { ["toggldesktop"]:
+    ensure => latest,
+  }->
   apt::source { 'sublime-text':
     location => 'https://download.sublimetext.com',
     repos    => '',
