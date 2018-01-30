@@ -63,6 +63,10 @@ class dotfiles::core {
     'tree',
     'vnstat',
     'whois',
+    'apt-transport-https',
+    'ca-certificates',
+    'gnupg2',
+    'software-properties-common',
 
     'nodejs',
 
@@ -76,7 +80,23 @@ class dotfiles::core {
   ]
   package { $install_packages:
     ensure => installed,
-  } ->
+  }->
+  apt::source { 'docker':
+    location => 'https://download.docker.com/linux/debian',
+    repos    => 'stable',
+    release  => 'stretch',
+    key      => {
+      id       => '9DC858229FC7DD38854AE2D88D81803C0EBFCD88',
+      'server' => 'pgp.mit.edu',
+    },
+  }->
+  package { 'docker-ce':
+    ensure => installed,
+  }->
+  exec { 'docker sika membership':
+    unless  => '/bin/grep -q "docker\\S*docker" /etc/group',
+    command => '/usr/sbin/usermod -aG docker sika',
+  }->
   package { [
         'docker-compose',
     ]:
@@ -114,6 +134,5 @@ class dotfiles::core {
     value => 'ondrej@ondrejsika.com',
     scope => 'system',
   }
-
 }
 

@@ -127,9 +127,6 @@ class dotfiles::desktop {
     ensure => installed,
   }
 
-  package { "apt-transport-https":
-    ensure => installed,
-  }->
   apt::source { 'ondrejsika':
     location => 'http://deb.oxs.cz',
     repos    => 'main',
