@@ -97,6 +97,7 @@ class dotfiles::desktop {
     'sqlitebrowser',
     'ffmpeg',  # ffprobe for youtube-dl (mp3)
     'nmap',
+    'pm-utils', # pm-suspend, pm-hibernate
   ]
   package { $install_packages:
     ensure => installed,
