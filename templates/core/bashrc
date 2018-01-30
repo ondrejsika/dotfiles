@@ -35,10 +35,6 @@ alias ga='gitk --all'
 
 alias ll='ls -al'
 
-<%- for drive in @drives -%>
-alias mc_<%= drive['name'] %>='mc . sh://<%= drive['ssh'] %>'
-<%- end -%>
-
 alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
 alias db_rt3='mysql -upower_user -ppower_user_passwd -hram2.bo'
