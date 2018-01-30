@@ -76,6 +76,12 @@ class dotfiles::core {
   ]
   package { $install_packages:
     ensure => installed,
+  } ->
+  package { [
+        'docker-compose',
+    ]:
+    ensure => installed,
+    provider => pip,
   }
 
   $install_gem_packages = [
