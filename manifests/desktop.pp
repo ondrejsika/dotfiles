@@ -180,5 +180,10 @@ class dotfiles::desktop {
     command => "/usr/bin/chattr -i /etc/resolv.conf",
   }
 
+  sudo::conf {'pm-suspend':
+    ensure  => present,
+    content => 'sika ALL=NOPASSWD: /usr/sbin/pm-suspend',
+    priority => 90,
+  }
 }
 

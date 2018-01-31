@@ -121,6 +121,7 @@ class dotfiles::core {
   sudo::conf {'sudoers':
      ensure  => present,
      content => 'sika ALL=(ALL) ALL',
+     priority => 10,
   }
 
 
