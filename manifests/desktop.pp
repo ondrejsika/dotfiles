@@ -185,5 +185,12 @@ class dotfiles::desktop {
     content => 'sika ALL=NOPASSWD: /usr/sbin/pm-suspend',
     priority => 90,
   }
+
+  package { [
+        'youtube-dl',
+    ]:
+    ensure => installed,
+    provider => pip,
+  }
 }
 
