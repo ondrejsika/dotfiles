@@ -73,6 +73,13 @@ alias ncr='/opt/namecoin/namecoin-cli -rpcconnect=chains.bo -rpcport=28336 -rpcu
 alias zcl='/opt/zcash/zcash-cli -rpcconnect=chains.bo -rpcport=8232 -rpcuser=zu -rpcpassword=zp '
 alias zct='/opt/zcash/zcash-cli -rpcconnect=chains.bo -rpcport=18232 -rpcuser=zu -rpcpassword=zp '
 alias zcr='/opt/zcash/zcash-cli -rpcconnect=chains.bo -rpcport=28232 -rpcuser=zu -rpcpassword=zp '
+alias ec='geth attach '
+alias ecl='ec http://ethereum01.oxs.cz:8545'
+alias ect='ec http://ethereum01.oxs.cz:18545'
+alias ecr='ec http://ethereum01.oxs.cz:28545'
+alias ecll='ec http://127.0.0.1:8545'
+alias eclt='ec http://127.0.0.1:18545'
+alias eclr='ec http://127.0.0.1:28545'
 
 alias lbe_livenet='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9001 chains.bo 8332 btcrpc btc'
 alias lbe_testnet='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9002 chains.bo 18332 btcrpc btc'
