@@ -10,12 +10,13 @@ My configuration
 ```
 apt-get update
 apt-get install -y sudo git
-./install-puppet.sh
-./install-dependencies.sh
 
 git clone git@github.com:ondrejsika/dotfiles.git
 cd dotfiles
 git clone git@github.com:ondrejsika/dotfiles-hiera.git hiera
+
+sudo ./install-puppet.sh
+sudo ./install-dependencies.sh
 ```
 
 ## Apply Server
