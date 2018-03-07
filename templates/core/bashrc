@@ -125,8 +125,12 @@ fi
 
 # Support for local bashrc, bash aliases
 
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+
+if [ -z $LOCAL_BASHRC_LOADED ]; then
+    if [ -f ~/.bashrc ]; then
+        export LOCAL_BASHRC_LOADED=yes
+        . ~/.bashrc
+    fi
 fi
 
 if [ -f ~/.bash_aliases ]; then
