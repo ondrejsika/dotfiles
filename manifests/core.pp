@@ -67,6 +67,7 @@ class dotfiles::core {
     'gnupg2',
     'software-properties-common',
 
+    'python3-venv',
     'nodejs',
 
     'cifs-utils',
