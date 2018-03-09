@@ -86,6 +86,7 @@ class dotfiles::desktop {
     'gitk',
     'xbacklight',
     'lxrandr',
+    'arandr',
     'gpa',
     'eog',
     'chromium',
