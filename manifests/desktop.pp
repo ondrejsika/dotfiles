@@ -99,6 +99,7 @@ class dotfiles::desktop {
     'ffmpeg',  # ffprobe for youtube-dl (mp3)
     'nmap',
     'pm-utils', # pm-suspend, pm-hibernate
+    'keepassx',
   ]
   package { $install_packages:
     ensure => installed,
