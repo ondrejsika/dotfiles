@@ -23,6 +23,10 @@ class dotfiles::core {
   file { '/etc/bash.bashrc':
     ensure => file,
     content => template('dotfiles/core/bashrc'),
+  } ->
+  file { '/etc/bash.bashrc-generated':
+    ensure => file,
+    content => template('dotfiles/core/bashrc-generated'),
   }
 
   package { 'tmux':

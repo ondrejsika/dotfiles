@@ -1,0 +1,4 @@
+<%- for server in @samba_servers -%>
+alias mount_<%= server['name'] %>='sudo mkdir -p <%= server['mountpoint'] %> && sudo mount -t cifs -o vers=1.0 -o uid=sika -o gid=sika -o password=x <%= server['url'] %> <%= server['mountpoint'] %>'
+<%- end -%>
+
