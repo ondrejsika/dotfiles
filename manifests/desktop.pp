@@ -164,6 +164,19 @@ class dotfiles::desktop {
   }->
   package { ["sublime-text"]:
     ensure => latest,
+  } ->
+  # https://updates.signal.org/desktop/apt xenial main
+  apt::source { 'signal':
+    location => 'https://updates.signal.org/desktop/apt',
+    repos    => 'main',
+    release  => 'xenial',
+    key      => {
+      id       => 'DBA36B5181D0C816F630E889D980A17457F6FB06',
+      'source' => 'https://updates.signal.org/desktop/apt/keys.asc',
+    },
+  }->
+  package { ["signal-desktop"]:
+    ensure => latest,
   }
 
   file { "/etc/resolv.conf":
