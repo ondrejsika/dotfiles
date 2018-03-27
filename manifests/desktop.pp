@@ -150,7 +150,10 @@ class dotfiles::desktop {
       'server' => 'pgp.mit.edu',
     },
   }->
-  package { ["toggldesktop"]:
+  package { [
+    "toggldesktop",
+    "mattermost-desktop",
+  ]:
     ensure => latest,
   }->
   apt::source { 'sublime-text':
