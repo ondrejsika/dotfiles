@@ -153,6 +153,7 @@ class dotfiles::desktop {
   package { [
     "toggldesktop",
     "mattermost-desktop",
+    "messengerfordesktop",
   ]:
     ensure => latest,
   }->
