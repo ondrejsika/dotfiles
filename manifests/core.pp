@@ -139,5 +139,12 @@ class dotfiles::core {
     value => 'ondrej@ondrejsika.com',
     scope => 'system',
   }
+
+  package { [
+        'virtualenvwrapper',
+    ]:
+    ensure => installed,
+    provider => pip,
+  }
 }
 

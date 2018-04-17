@@ -143,6 +143,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# VirtualEnv Wrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=~/.virtualenvs
+    mkdir -p $WORKON_HOME
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # Enable autocomplete
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
