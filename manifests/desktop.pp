@@ -100,6 +100,8 @@ class dotfiles::desktop {
     'nmap',
     'pm-utils', # pm-suspend, pm-hibernate
     'keepassx',
+    'psensor',
+    'hardinfo',
   ]
   package { $install_packages:
     ensure => installed,
