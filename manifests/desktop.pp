@@ -140,7 +140,7 @@ class dotfiles::desktop {
       'server' => 'pgp.mit.edu',
     },
   }->
-  package { ["telegram", "pycharm", "clion", "datagrip"]:
+  package { ["telegram"]:
     ensure => latest,
   }->
   apt::source { 'ondrejsika-3rdparties':
