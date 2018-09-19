@@ -147,7 +147,7 @@ fi
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=~/.virtualenvs
     mkdir -p $WORKON_HOME
-    . /usr/local/bin/virtualenvwrapper.sh
+    . /usr/local/bin/virtualenvwrapper.sh 2> /dev/null
 fi
 
 # Enable autocomplete
