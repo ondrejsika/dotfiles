@@ -70,6 +70,7 @@ class dotfiles::core {
     'ca-certificates',
     'gnupg2',
     'software-properties-common',
+    'psmisc',  # for fuser
 
     'python3-venv',
     'nodejs',
