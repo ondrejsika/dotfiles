@@ -102,6 +102,7 @@ class dotfiles::desktop {
     'keepassx',
     'psensor',
     'hardinfo',
+    'rofi',  # alternative to dmenu
   ]
   package { $install_packages:
     ensure => installed,
