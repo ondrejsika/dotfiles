@@ -11,3 +11,9 @@ My configuration files for desktop (Mac) and servers (Debian)
 ```
 ./apply-mac.sh
 ```
+
+## Server (Debian)
+
+```
+./apply-server.sh
+```
