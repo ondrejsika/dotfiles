@@ -2,6 +2,13 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
     hs.reload()
 end)
 
+hs.hotkey.bind({"cmd"}, "M", function()
+  -- Source of Apple Script - https://github.com/wafflesnatcha/AppleScripts/blob/master/Windows/Zoom%20Window.applescript
+  hs.osascript.applescript([[
+    tell application (path to frontmost application as Unicode text) to tell first window to set zoomed to not zoomed
+  ]])
+end)
+
 hs.hotkey.bind({"cmd"}, "D", function()
     tap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
         tap:stop()
