@@ -4,6 +4,7 @@ end)
 
 hs.hotkey.bind({"cmd"}, "D", function()
     tap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
+        tap:stop()
         local keyCode = event:getKeyCode()
         local keyMap = require"hs.keycodes".map
 
@@ -27,7 +28,6 @@ hs.hotkey.bind({"cmd"}, "D", function()
             ips = hs.network.addresses(ip4)
             hs.alert(ips[1])
         end
-        tap:stop()
         return true
     end)
     tap:start()
