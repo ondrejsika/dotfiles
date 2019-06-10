@@ -116,4 +116,26 @@ hs.hotkey.bind({"alt", "shift"}, "l", function()
   hs.execute("chunkc tiling::window --warp east", true)
 end)
 
+-- Resize windows
+
+hs.hotkey.bind({"alt", "shift"}, "left", function()
+  hs.execute("chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west", true)
+  hs.execute("chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east", true)
+end)
+
+hs.hotkey.bind({"alt", "shift"}, "down", function()
+  hs.execute("chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south", true)
+  hs.execute("chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north", true)
+end)
+
+hs.hotkey.bind({"alt", "shift"}, "up", function()
+  hs.execute("chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north", true)
+  hs.execute("chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south", true)
+end)
+
+hs.hotkey.bind({"alt", "shift"}, "right", function()
+  hs.execute("chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east", true)
+  hs.execute("chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west", true)
+end)
+
 hs.alert("Ondrej Sika's Hammerspoon config loaded")
