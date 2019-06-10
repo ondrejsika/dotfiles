@@ -6,35 +6,8 @@
 My configuration files for desktop (Mac) and servers (Debian)
 
 
-## Install
+## Desktop (Mac)
 
 ```
-apt-get update
-apt-get install -y sudo git
-
-git clone git@github.com:ondrejsika/dotfiles.git
-cd dotfiles
-git clone git@github.com:ondrejsika/dotfiles-hiera.git hiera
-
-sudo ./install-puppet.sh
-sudo ./install-dependencies.sh
+./apply-mac.sh
 ```
-
-## Apply Server
-
-```
-sudo ./apply-server.sh
-```
-
-## Apply Desktop
-
-```
-sudo ./apply-desktop.sh
-```
-
-## Build
-
-```
-puppet module build .
-```
-
