@@ -60,4 +60,60 @@ hs.hotkey.bind({"cmd", "shift"}, "space", function()
     hs.alert(output)
 end)
 
+hs.hotkey.bind({"cmd"}, "q", function()
+  hs.execute("chunkc tiling::window --close", true)
+end)
+
+hs.hotkey.bind({"cmd", "ctrl"}, "r", function()
+  hs.execute("chunkc tiling::desktop --rotate 90", true)
+end)
+
+hs.hotkey.bind({"cmd", "ctrl"}, "w", function()
+  hs.execute("chunkc tiling::desktop --layout monocle", true)
+end)
+
+hs.hotkey.bind({"cmd", "ctrl"}, "e", function()
+  hs.execute("chunkc tiling::desktop --layout bsp", true)
+end)
+
+hs.hotkey.bind({"cmd", "ctrl"}, "f", function()
+  hs.execute("chunkc tiling::window --toggle float", true)
+end)
+
+-- Move focus
+
+hs.hotkey.bind({"alt"}, "h", function()
+  hs.execute("chunkc tiling::window --focus west", true)
+end)
+
+hs.hotkey.bind({"alt"}, "j", function()
+  hs.execute("chunkc tiling::window --focus south", true)
+end)
+
+hs.hotkey.bind({"alt"}, "k", function()
+  hs.execute("chunkc tiling::window --focus north", true)
+end)
+
+hs.hotkey.bind({"alt"}, "l", function()
+  hs.execute("chunkc tiling::window --focus east", true)
+end)
+
+-- Move window
+
+hs.hotkey.bind({"alt", "shift"}, "h", function()
+  hs.execute("chunkc tiling::window --warp west", true)
+end)
+
+hs.hotkey.bind({"alt", "shift"}, "j", function()
+  hs.execute("chunkc tiling::window --warp south", true)
+end)
+
+hs.hotkey.bind({"alt", "shift"}, "k", function()
+  hs.execute("chunkc tiling::window --warp north", true)
+end)
+
+hs.hotkey.bind({"alt", "shift"}, "l", function()
+  hs.execute("chunkc tiling::window --warp east", true)
+end)
+
 hs.alert("Ondrej Sika's Hammerspoon config loaded")
