@@ -1,9 +1,0 @@
-#!/bin/sh
-if [ ! $1]; then
-    workspace=$(zenity --entry --title "Go to workspace" --text "")
-else
-    workspace=$1
-fi
-
-i3-msg workspace $workspace
-
