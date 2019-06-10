@@ -11,9 +11,9 @@ set nocompatible
 syntax on
 set wildmenu
 
-" Pathogen setup
-execute pathogen#infect()
-execute pathogen#helptags()
+" [DISABLED] Pathogen setup
+" execute pathogen#infect()
+" execute pathogen#helptags()
 
 " Tab settings
 set tabstop=4 shiftwidth=4
