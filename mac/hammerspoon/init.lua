@@ -53,4 +53,11 @@ hs.hotkey.bind({"cmd"}, "D", function()
     tap:start()
 end)
 
+hs.hotkey.bind({"cmd", "shift"}, "space", function()
+    status, cmd = hs.dialog.textPrompt("Run", "bash commad")
+    output, status
+= hs.execute(cmd, true)
+    hs.alert(output)
+end)
+
 hs.alert("Ondrej Sika's Hammerspoon config loaded")
