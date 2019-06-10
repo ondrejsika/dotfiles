@@ -1,9 +1,10 @@
 # ondrejsika/dotfiles
 
-My configuration
+    2014 Ondrej Sika <ondrej@ondrejsika.com>
+    https://github.com/ondrejsika/dotfiles
 
-- author: Ondrej Sika <ondrej@ondrejsika.com>
-- license: [MIT](https://ondrejsika.com/license/mit.txt)
+My configuration files for desktop (Mac) and servers (Debian)
+
 
 ## Install
 
