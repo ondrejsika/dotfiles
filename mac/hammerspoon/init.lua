@@ -3,10 +3,23 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "M", function()
-  -- Source of Apple Script - https://github.com/wafflesnatcha/AppleScripts/blob/master/Windows/Zoom%20Window.applescript
-  hs.osascript.applescript([[
-    tell application (path to frontmost application as Unicode text) to tell first window to set zoomed to not zoomed
-  ]])
+  -- Source Lua implementation - https://github.com/Hammerspoon/hammerspoon/issues/181#issuecomment-69685928
+  local win = hs.window.focusedWindow()
+  local frame = win:frame()
+  local id = win:id()
+
+  -- init table to save window state
+  savedwin = savedwin or {}
+  savedwin[id] = savedwin[id] or {}
+
+  if (savedwin[id].maximized == nil or savedwin[id].maximized == false) then
+    savedwin[id].frame = frame
+    savedwin[id].maximized = true
+    win:maximize()
+  else
+    savedwin[id].maximized = false
+    win:setFrame(savedwin[id].frame)
+  end
 end)
 
 hs.hotkey.bind({"cmd"}, "D", function()
