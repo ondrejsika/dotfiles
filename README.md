@@ -15,13 +15,13 @@ My configuration files for desktop (Mac) and servers (Debian)
 ### Install Brew Packages
 
 ```
-(cd mac/brew/ && brew bundle)
+./brew-install.sh
 ```
 
 ### Save Brew Packages
 
 ```
-(rm -rf mac/brew/Brewfile && cd mac/brew/ && brew bundle dump)
+./brew-save.sh
 ```
 
 ## Server (Debian)
