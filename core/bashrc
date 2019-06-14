@@ -46,68 +46,7 @@ alias ll='ls -al'
 
 alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
-alias db_rt3='mysql -upower_user -ppower_user_passwd -hram2.bo'
-
-alias mysql_ram2='mysql -u power_user -ppower_user_passwd -h ram2.bo'
-
-alias vinotes='rm .notes.swp -f; vim notes'
-alias vitodo='rm .todo.swp -f; vim todo'
-alias viurls='rm .urls.swp -f; vim urls'
-
-alias py=python
-alias co=coffee
-alias js=nodejs
-alias ipy=ipython
-
-alias rfa='echo flushall | redis-cli'
-
-alias cd_pool='cd /home/sika/projects/pool'
-alias cd_webpool='cd /home/sika/projects/pool/web-pool'
-alias cd_stratum='cd /home/sika/projects/pool/stratum-server'
-alias cd_blockchainhub='cd /home/sika/projects/pool/blockchain-hub'
-alias cd_poolsrv='cd /home/sika/projects/pool/lib-poolsrv'
-alias cd_grit='cd /home/sika/projects/pool/lib-grit'
-alias cd_rootsrv='cd /home/sika/projects/pool/root-server'
-
-alias bcl='bitcoin-cli -rpcconnect=chains.bo -rpcport=8332 -rpcuser=btcrpc -rpcpassword=btc '
-alias bct='bitcoin-cli -rpcconnect=chains.bo -rpcport=18332 -rpcuser=btcrpc -rpcpassword=btc '
-alias bcr='bitcoin-cli -rpcconnect=chains.bo -rpcport=28332 -rpcuser=btcrpc -rpcpassword=btc '
-alias ncl='/opt/namecoin/namecoin-cli -rpcconnect=chains.bo -rpcport=8336 -rpcuser=nmcrpc -rpcpassword=nmc '
-alias nct='/opt/namecoin/namecoin-cli -rpcconnect=chains.bo -rpcport=18336 -rpcuser=nmcrpc -rpcpassword=nmc '
-alias ncr='/opt/namecoin/namecoin-cli -rpcconnect=chains.bo -rpcport=28336 -rpcuser=nmcrpc -rpcpassword=nmc '
-alias zcl='/opt/zcash/zcash-cli -rpcconnect=chains.bo -rpcport=8232 -rpcuser=zu -rpcpassword=zp '
-alias zct='/opt/zcash/zcash-cli -rpcconnect=chains.bo -rpcport=18232 -rpcuser=zu -rpcpassword=zp '
-alias zcr='/opt/zcash/zcash-cli -rpcconnect=chains.bo -rpcport=28232 -rpcuser=zu -rpcpassword=zp '
-alias ec='geth attach '
-alias ecl='ec http://ethereum01.oxs.cz:8545'
-alias ect='ec http://ethereum01.oxs.cz:18545'
-alias ecr='ec http://ethereum01.oxs.cz:28545'
-alias ecll='ec http://127.0.0.1:8545'
-alias eclt='ec http://127.0.0.1:18545'
-alias eclr='ec http://127.0.0.1:28545'
-
-alias lbe_livenet='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9001 chains.bo 8332 btcrpc btc'
-alias lbe_testnet='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9002 chains.bo 18332 btcrpc btc'
-alias lbe_regtest='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9003 chains.bo 28332 btcrpc btc'
-alias lbe_livenet_nmc='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9011 chains.bo 8336 nmcrpc nmc'
-alias lbe_testnet_nmc='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9012 chains.bo 18336 nmcrpc nmc'
-alias lbe_regtest_nmc='/home/sika/projects/lbe/.env/bin/python /home/sika/projects/lbe/lbe.py 0.0.0.0 9013 chains.bo 28336 nmcrpc nmc'
-alias lbe_livenet_zcash='/home/sika/projects/lbe-zcash/.env/bin/python /home/sika/projects/lbe-zcash/lbe.py 0.0.0.0 9021 chains.bo 8232 zu zp'
-alias lbe_testnet_zcash='/home/sika/projects/lbe-zcash/.env/bin/python /home/sika/projects/lbe-zcash/lbe.py 0.0.0.0 9022 chains.bo 18232 zu zp'
-alias lbe_regtest_zcash='/home/sika/projects/lbe-zcash/.env/bin/python /home/sika/projects/lbe-zcash/lbe.py 0.0.0.0 9023 chains.bo 28232 zu zp'
-
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
-
-alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
-alias i3lock='i3lock -i bg2.png'
-
-
-alias mc_mol_loc='mc . sh://192.168.1.51/mnt'
-alias xrandr_pool='xrandr --auto --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --right-of DVI-I-1'
-
-
-alias settitle='. /etc/bash.settitle'
-
 
 # If not running interactively, don't do anything
 case $- in
@@ -117,10 +56,6 @@ esac
 
 
 # BASH debian default config
-HISTCONTROL=ignoreboth
-shopt -s histappend
-HISTSIZE=1000000
-HISTFILESIZE=2000000
 shopt -s checkwinsize
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -132,17 +67,11 @@ fi
 
 
 # Support for local bashrc, bash aliases
-
-
 if [ -z $LOCAL_BASHRC_LOADED ]; then
     if [ -f ~/.bashrc ]; then
         export LOCAL_BASHRC_LOADED=yes
         . ~/.bashrc
     fi
-fi
-
-if [ -f /etc/bash.bashrc-generated ]; then
-    . /etc/bash.bashrc-generated
 fi
 
 if [ -f ~/.bash_aliases ]; then
