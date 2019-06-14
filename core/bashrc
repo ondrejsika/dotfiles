@@ -12,6 +12,10 @@ export GIT_AUTHOR_EMAIL="ondrej@ondrejsika.com"
 export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 
+# Set language for MC
+export LANG=en_EN.UTF-8
+
+
 export PATH=$PATH:/home/sika/bin
 
 alias cc="xclip -sel clip"
