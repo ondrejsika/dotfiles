@@ -78,6 +78,7 @@ end)
 
 hs.hotkey.bind({"cmd", "ctrl"}, "f", function()
   hs.execute("chunkc tiling::window --toggle float", true)
+  hs.alert("chunkwm: float toggled")
 end)
 
 -- Move focus
