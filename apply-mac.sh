@@ -18,3 +18,6 @@ ln -s $(pwd)/core/vimrc ~/.vimrc
 # Hammer Spoon
 rm -rf ~/.hammerspoon
 ln -s $(pwd)/mac/hammerspoon ~/.hammerspoon
+
+# Tor
+ln -s $(pwd)/mac/torrc $(brew --prefix)/etc/tor/torrc

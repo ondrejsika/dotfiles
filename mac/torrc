@@ -1,0 +1,3 @@
+HiddenServiceDir /usr/local/var/lib/tor/sshd/
+HiddenServicePort 22 127.0.0.1:22
+ExitPolicy reject *:*
