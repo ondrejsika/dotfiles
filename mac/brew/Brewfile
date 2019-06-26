@@ -27,6 +27,7 @@ brew "telnet"
 brew "terraform"
 brew "tig"
 brew "tor", restart_service: true
+brew "tree"
 brew "watch"
 brew "wget"
 brew "yarn"
