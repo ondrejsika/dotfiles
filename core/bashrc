@@ -59,6 +59,11 @@ alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
 
+
+# Docker
+alias dra="docker ps -a  -q | xargs docker rm -f"
+
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
