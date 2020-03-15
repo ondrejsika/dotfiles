@@ -44,6 +44,7 @@ alias rmswp="find . -name '*.swp' -exec rm -rf {} \;"
 alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
 
 alias st='git status'
+alias sta='git status --untracked-files=all'
 alias di='git diff'
 alias dis='git diff --staged'
 alias dit='git diff | tig'
