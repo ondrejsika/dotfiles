@@ -44,17 +44,29 @@ alias rmswp="find . -name '*.swp' -exec rm -rf {} \;"
 alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
 
 alias st='git status'
+complete -F _complete_alias st
 alias sta='git status --untracked-files=all'
+complete -F _complete_alias sta
 alias di='git diff'
+complete -F _complete_alias di
 alias dis='git diff --staged'
+complete -F _complete_alias dis
 alias dit='git diff | tig'
+complete -F _complete_alias dit
 alias dist='git diff --staged | tig'
+complete -F _complete_alias dist
 alias ci='git commit -S'
+complete -F _complete_alias ci
 alias co='git checkout'
+complete -F _complete_alias co
 alias br='git branch'
+complete -F _complete_alias br
 alias ad='git add'
+complete -F _complete_alias ad
 alias fa='git fetch --all --prune'
+complete -F _complete_alias fa
 alias ga='gitk --all'
+complete -F _complete_alias ga
 
 alias ll='ls -al'
 
