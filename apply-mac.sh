@@ -3,6 +3,7 @@
 # Bash
 echo ". $(pwd)/core/3rdparty/git-prompt.sh" >> ~/.profile
 echo ". $(pwd)/core/3rdparty/git-completion.sh" >> ~/.profile
+echo ". $(pwd)/core/3rdparty/complete_alias" >> ~/.profile
 echo ". $(pwd)/core/bashrc" >> ~/.profile
 
 echo "" >> ~/.bashrc
