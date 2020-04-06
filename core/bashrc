@@ -80,6 +80,7 @@ alias dra="docker ps -a  -q | xargs docker rm -f"
 
 # Terraform
 alias tf=terraform
+complete -F _complete_alias tf
 
 # Mac Aliases
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
