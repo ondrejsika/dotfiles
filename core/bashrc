@@ -4,7 +4,7 @@
 # Ondrej Sika <ondrej@ondrejsika.com>
 #####################################
 
-ONDREJ_SIKA_DESKTOP_HOSTNAMES=" sika-br sika-home sika-x250 sika-macbookpro sika-macbookpro.local pool-dev "
+ONDREJ_SIKA_DESKTOP_HOSTNAMES=" sika-mac sika-mac.local sika-br sika-home sika-x250 sika-macbookpro sika-macbookpro.local pool-dev "
 
 export EDITOR=/usr/bin/vim
 
