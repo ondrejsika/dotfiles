@@ -82,6 +82,25 @@ alias dra="docker ps -a  -q | xargs docker rm -f"
 alias tf=terraform
 complete -F _complete_alias tf
 
+# Terraform Shortcuts
+alias tfi="terraform init"
+complete -F _complete_alias tfi
+
+alias tfa="terraform apply"
+complete -F _complete_alias tfa
+
+alias tfd="terraform destroy"
+complete -F _complete_alias tfd
+
+alias tfp="terraform plan"
+complete -F _complete_alias tfp
+
+alias tfs="terraform show"
+complete -F _complete_alias tfs
+
+alias tfo="terraform output"
+complete -F _complete_alias tfo
+
 # Mac Aliases
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
