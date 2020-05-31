@@ -42,6 +42,7 @@ alias rmpyo="find . -name '*.pyo' -exec rm -rf {} \;"
 alias rmlog="find . -name '*.log' -exec rm -rf {} \;"
 alias rmswp="find . -name '*.swp' -exec rm -rf {} \;"
 alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
+alias rmdsstore="find . -name '.DS_Store' -exec rm -rf {} \;"
 
 alias st='git status'
 complete -F _complete_alias st
