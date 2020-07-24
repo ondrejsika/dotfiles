@@ -29,6 +29,8 @@ export PATH=$PATH:/home/sika/bin
 # Ruby (on Mac, using Brew)
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
+[ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
+
 alias cc="xclip -sel clip"
 
 alias serve="python -m SimpleHTTPServer"
