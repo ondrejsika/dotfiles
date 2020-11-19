@@ -2,6 +2,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
     hs.reload()
 end)
 
+hs.hotkey.bind({"cmd", "shift"}, "d", function()
+  hs.eventtap.keyStroke({"cmd"}, "d")
+end)
+
 hs.hotkey.bind({"cmd"}, "M", function()
   -- Source Lua implementation - https://github.com/Hammerspoon/hammerspoon/issues/181#issuecomment-69685928
   local win = hs.window.focusedWindow()
