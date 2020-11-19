@@ -31,6 +31,8 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 [ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
+alias w="watch -n 0.3"
+
 alias cc="xclip -sel clip"
 
 alias serve="python -m SimpleHTTPServer"
