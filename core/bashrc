@@ -79,6 +79,21 @@ alias createutfdb="createdb -l en_US.utf8 -E UTF8 -T template0"
 
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
 
+# --- Kubernetes ---
+
+# kubectl
+alias k=kubectl
+complete -F _complete_alias k
+
+# kubectx
+alias kx=kubectx
+complete -F _complete_alias kx
+
+# kube-ps1
+function kps1() {
+  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  export PS1='$(kube_ps1)'$PS1
+}
 
 # Docker
 alias dra="docker ps -a  -q | xargs docker rm -f"
