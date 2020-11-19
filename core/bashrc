@@ -48,6 +48,8 @@ alias rmswp="find . -name '*.swp' -exec rm -rf {} \;"
 alias rmmo="find . -name '*.mo' -exec rm -rf {} \;"
 alias rmdsstore="find . -name '.DS_Store' -exec rm -rf {} \;"
 
+alias g=git
+complete -F _complete_alias g
 alias st='git status'
 complete -F _complete_alias st
 alias sta='git status --untracked-files=all'
