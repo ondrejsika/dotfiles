@@ -91,6 +91,10 @@ complete -F _complete_alias k
 alias kx=kubectx
 complete -F _complete_alias kx
 
+# kubens
+alias kn=kubens
+complete -F _complete_alias kn
+
 # kube-ps1
 function kps1() {
   source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
