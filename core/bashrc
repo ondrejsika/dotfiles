@@ -102,6 +102,21 @@ function kps1() {
   export PS1='$(kube_ps1)'$PS1
 }
 
+# krun
+alias krun="kubectl run kubeshell -ti --rm --image nixery.dev/shell/kubectl/curl/host/telnet/wget/vim/mc/htop/less -- bash"
+
+# ksys
+alias ksys="kubectl -n kube-system"
+complete -F _complete_alias ksys
+
+# klogs
+alias klogs="kubectl logs"
+complete -F _complete_alias klogs
+
+# kports
+alias kports="kubectl port-forward"
+complete -F _complete_alias kports
+
 # Docker
 alias dra="docker ps -a  -q | xargs docker rm -f"
 
