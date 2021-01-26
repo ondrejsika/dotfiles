@@ -26,6 +26,7 @@ export HISTFILESIZE=2000000
 shopt -s histappend
 
 export PATH=$PATH:/home/sika/bin
+export PATH=$PATH:/Users/ondrej/dotfiles/core/bin
 # Ruby (on Mac, using Brew)
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
