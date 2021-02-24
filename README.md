@@ -13,7 +13,6 @@ My configuration files for desktop (Mac) and servers (Debian) of:
 - brew (package list)
 - i3 (Linux desktop)
 
-
 ## Desktop (Mac)
 
 ```
@@ -36,4 +35,21 @@ My configuration files for desktop (Mac) and servers (Debian) of:
 
 ```
 ./apply-server.sh
+```
+
+## Setup Shared
+
+```
+cd
+git clone https://github.com/ondrejsika/dotfiles.git .dotfiles-ondrejsika
+cd .dotfiles-ondrejsika
+./apply-shared.sh
+cd
+. .ondrejsika.bashrc
+```
+
+## Activate Shared
+
+```
+. ~/.ondrejsika.bashrc
 ```
