@@ -144,6 +144,11 @@ complete -F _complete_alias tfs
 alias tfo="terraform output"
 complete -F _complete_alias tfo
 
+function commit-terraform-lock() {
+  git add .terraform.lock.hcl
+  git commit -m "[generated] Update .terraform.lock.hcl"
+}
+
 # Mac Aliases
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
