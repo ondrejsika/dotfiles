@@ -32,6 +32,10 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 [ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
+
+export KREW_PATH="${KREW_ROOT:-$HOME/.krew}/bin"
+[ -d "$KREW_PATH" ] && export PATH="$KREW_PATH:$PATH"
+
 alias w="watch -n 0.3"
 
 alias cc="xclip -sel clip"
