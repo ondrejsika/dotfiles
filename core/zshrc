@@ -50,3 +50,6 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # tergum
 . <(tergum completion zsh); compdef _tergum tergum
+
+# training-cli
+. <(training-cli completion zsh); compdef _training-cli training-cli
