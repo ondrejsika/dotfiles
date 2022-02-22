@@ -41,3 +41,6 @@ alias tfp="terraform plan"
 alias tfs="terraform show"
 alias tfo="terraform output"
 
+# Terrafor autocompletition
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
