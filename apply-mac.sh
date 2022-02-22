@@ -12,6 +12,10 @@ echo ". ~/.bashrc" >> ~/.profile
 echo "" >> ~/.bash_aliases
 echo ". ~/.bash_aliases" >> ~/.profile
 
+# ZSH
+echo "" > ~/.zshrc
+echo ". $(pwd)/core/zshrc" >> ~/.zshrc
+
 # VIM
 rm -rf ~/.vimrc
 ln -s $(pwd)/core/vimrc ~/.vimrc
