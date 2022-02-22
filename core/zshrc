@@ -47,3 +47,6 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # slu
 . <(slu completion zsh); compdef _slu slu
+
+# tergum
+. <(tergum completion zsh); compdef _tergum tergum
