@@ -3,6 +3,12 @@ ZSH_THEME="robbyrussell"
 plugins=(git kube-ps1)
 source $ZSH/oh-my-zsh.sh
 
+# Individual history per tab
+#
+# See: https://superuser.com/a/1248123/675796
+unsetopt inc_append_history
+unsetopt share_history
+
 # Git
 
 alias st='git status'
