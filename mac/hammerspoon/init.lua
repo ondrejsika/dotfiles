@@ -47,6 +47,8 @@ hs.hotkey.bind({"cmd"}, "D", function()
             ip4, ip6 = hs.network.primaryInterfaces()
             ips = hs.network.addresses(ip4)
             hs.alert(ips[1])
+        elseif keyCode == keyMap["b"] then
+          hs.eventtap.keyStroke({"cmd", "shift", "ctrl", "option"}, "B")
         end
         return true
     end)
