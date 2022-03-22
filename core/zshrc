@@ -73,3 +73,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Terraform Plugin Cache (save plugins in one dir to save space)
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform-plugin-cache"
+
+# Docker
+alias dra='docker ps -a -q | xargs -r docker rm -f'
