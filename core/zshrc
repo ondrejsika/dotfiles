@@ -30,6 +30,10 @@ alias k=kubectl
 alias kx=kubectx
 alias kn=kubens
 
+# krew
+
+export PATH="${PATH}:${HOME}/.krew/bin"
+
 # kube-ps1
 
 function kps1() {
