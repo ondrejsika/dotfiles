@@ -62,6 +62,12 @@ function tfaa() {
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
+# ArgoCD
+
+. <(argocd completion zsh); compdef _argocd argocd
+
+alias acd="argocd "
+
 # slu
 . <(slu completion zsh); compdef _slu slu
 
