@@ -3,6 +3,11 @@ ZSH_THEME="robbyrussell"
 plugins=(git kube-ps1 docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 
+
+# ~/bin
+
+[ -d "${HOME}/bin" ] && export PATH="${HOME}/bin:${PATH}"
+
 # Individual history per tab
 #
 # See: https://superuser.com/a/1248123/675796
