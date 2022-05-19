@@ -29,6 +29,8 @@ alias ad='git add'
 alias fa='git fetch --all --prune'
 alias ga='gitk --all'
 
+alias guo='slu git url open'
+
 # Kubernetes
 
 alias k=kubectl
