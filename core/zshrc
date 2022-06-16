@@ -37,6 +37,8 @@ alias k=kubectl
 alias kx=kubectx
 alias kn=kubens
 
+alias kdev="kubectl run dev-$(date +%s) --rm -ti --image sikalabs/dev -- bash"
+
 # krew
 
 export PATH="${PATH}:${HOME}/.krew/bin"
