@@ -28,6 +28,7 @@ alias br='git branch'
 alias ad='git add'
 alias fa='git fetch --all --prune'
 alias ga='gitk --all'
+alias glo='git log --oneline '
 
 alias guo='slu git url open'
 
