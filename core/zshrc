@@ -110,3 +110,10 @@ alias yd='youtube-dl --extract-audio --audio-format mp3 '
 # Completion
 
 . <(minikube completion zsh)
+
+# History
+export HISTFILE=~/.zsh_history
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+
+export HISTORY_IGNORE="(MAGICSHIT|*ACCESS_KEY*|*SECRET_KEY*|*TOKEN*)"
