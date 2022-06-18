@@ -102,6 +102,7 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform-plugin-cache"
 
 # Docker
 alias dra='docker ps -a -q | xargs -r docker rm -f'
+alias docker-compose="docker compose "
 
 # youtube-dl mp3
 alias yd='youtube-dl --extract-audio --audio-format mp3 '
