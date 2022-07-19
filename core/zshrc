@@ -7,6 +7,7 @@ source $ZSH/oh-my-zsh.sh
 # ~/bin
 
 [ -d "${HOME}/bin" ] && export PATH="${HOME}/bin:${PATH}"
+[ -d "${HOME}/.yarn/bin" ] && export PATH="${HOME}/.yarn/bin:${PATH}"
 
 # Individual history per tab
 #
