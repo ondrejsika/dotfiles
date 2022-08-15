@@ -53,6 +53,9 @@ function kps1() {
   export PS1='$(kube_ps1) '$PS1
 }
 
+# KUBECONFIG (for autocomple of export environment variable)
+export KUBECONFIG=~/.kube/config
+
 # Terraform
 
 alias tf=terraform
