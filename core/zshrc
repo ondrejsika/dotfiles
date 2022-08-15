@@ -48,7 +48,10 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 
 # kube-ps1
 
+export KPS1_ACTIVE=0
 function kps1() {
+  [[ "$KPS1_ACTIVE" == "1" ]] && return 0
+  export KPS1_ACTIVE=1
   export KUBE_PS1_SYMBOL_ENABLE=false
   export PS1='$(kube_ps1) '$PS1
 }
