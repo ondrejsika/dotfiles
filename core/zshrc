@@ -40,6 +40,7 @@ alias kx=kubectx
 alias kn=kubens
 
 alias kdev="kubectl run dev-$(date +%s) --rm -ti --image sikalabs/dev -- bash"
+alias ddev="docker run -ti -w $(pwd) -v $(pwd):$(pwd) sikalabs/dev"
 
 # krew
 
