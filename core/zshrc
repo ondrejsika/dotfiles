@@ -95,6 +95,10 @@ alias acd="argocd "
 # training-cli
 . <(training-cli completion zsh); compdef _training-cli training-cli
 
+# configboard-cli
+. <(configboard-cli completion zsh); compdef _configboard-cli configboard-cli
+alias cb="configboard-cli"
+
 # watch
 alias watch="watch "
 alias w="watch -n 0.3 "
