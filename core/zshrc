@@ -104,6 +104,9 @@ alias cb="configboard-cli"
 alias watch="watch "
 alias w="watch -n 0.3 "
 
+alias viddy="viddy "
+alias ww="viddy -n 0.3 "
+
 # Fuck
 eval $(thefuck --alias)
 
