@@ -101,6 +101,9 @@ alias acd="argocd "
 . <(configboard-cli completion zsh); compdef _configboard-cli configboard-cli
 alias cb="configboard-cli"
 
+# kaf
+. <(kaf completion zsh); compdef _kaf kaf
+
 # watch
 alias watch="watch "
 alias w="watch -n 0.3 "
