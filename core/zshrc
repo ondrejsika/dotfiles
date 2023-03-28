@@ -101,6 +101,9 @@ alias acd="argocd "
 # tergum
 . <(tergum completion zsh); compdef _tergum tergum
 
+# gobble
+. <(gobble completion zsh); compdef _gobble gobble
+
 # training-cli
 . <(training-cli completion zsh); compdef _training-cli training-cli
 
