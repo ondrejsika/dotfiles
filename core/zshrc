@@ -91,24 +91,24 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # ArgoCD
 
-. <(argocd completion zsh); compdef _argocd argocd
+command -v argocd &> /dev/null && . <(argocd completion zsh); compdef _argocd argocd
 
 alias acd="argocd "
 
 # slu
-. <(slu completion zsh); compdef _slu slu
+command -v slu &> /dev/null && . <(slu completion zsh); compdef _slu slu
 
 # tergum
-. <(tergum completion zsh); compdef _tergum tergum
+command -v tergum &> /dev/null && . <(tergum completion zsh); compdef _tergum tergum
 
 # gobble
-. <(gobble completion zsh); compdef _gobble gobble
+command -v gobble &> /dev/null && . <(gobble completion zsh); compdef _gobble gobble
 
 # training-cli
-. <(training-cli completion zsh); compdef _training-cli training-cli
+command -v training-cli &> /dev/null && . <(training-cli completion zsh); compdef _training-cli training-cli
 
 # kaf
-. <(kaf completion zsh); compdef _kaf kaf
+command -v kaf &> /dev/null && . <(kaf completion zsh); compdef _kaf kaf
 
 # watch
 alias watch="watch "
@@ -118,7 +118,7 @@ alias viddy="viddy "
 alias ww="viddy -n 0.3 "
 
 # Fuck
-eval $(thefuck --alias)
+command -v thefuck &> /dev/null && eval $(thefuck --alias)
 
 # NVM (Node Version Manager)
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -137,7 +137,7 @@ alias yd='youtube-dl --extract-audio --audio-format mp3 '
 
 # Completion
 
-. <(minikube completion zsh)
+command -v minikube &> /dev/null &&  . <(minikube completion zsh)
 
 # History
 export HISTFILE=~/.zsh_history
