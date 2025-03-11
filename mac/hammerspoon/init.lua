@@ -37,11 +37,11 @@ hs.hotkey.bind({"cmd"}, "D", function()
             ]])
         elseif keyCode == keyMap["t"] then
             hs.osascript.applescript([[
-                tell application "/Applications/iTerm.app"
-                    create window with default profile
-                    activate
-                    tell first window to set zoomed to not zoomed
-                end tell
+              tell application "iTerm"
+                  create window with default profile
+                  activate
+                  tell the first window to set zoomed to not zoomed
+              end tell
             ]])
         elseif keyCode == keyMap["i"] then
             ip4, ip6 = hs.network.primaryInterfaces()
