@@ -98,6 +98,9 @@ alias acd="argocd "
 # slu
 command -v slu &> /dev/null && . <(slu completion zsh); compdef _slu slu
 
+# sli
+command -v sli &> /dev/null && . <(sli completion zsh); compdef _sli sli
+
 # tergum
 command -v tergum &> /dev/null && . <(tergum completion zsh); compdef _tergum tergum
 
