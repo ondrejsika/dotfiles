@@ -148,3 +148,7 @@ export HISTSIZE=999999999
 export SAVEHIST=$HISTSIZE
 
 export HISTORY_IGNORE="(MAGICSHIT|*ACCESS_KEY*|*SECRET_KEY*|*TOKEN*)"
+
+# aliases
+alias gitignore_and_editorconfig="slu ft ec && slu ft gi && slu git commit editorconfig-and-gitignore"
+alias gitignore_and_editorconfig_terraform="slu ft ec && slu ft gi --terraform && slu git commit editorconfig-and-gitignore"
