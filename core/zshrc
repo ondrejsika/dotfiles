@@ -116,6 +116,9 @@ command -v training-cli &> /dev/null && . <(training-cli completion zsh); compde
 # kaf
 command -v kaf &> /dev/null && . <(kaf completion zsh); compdef _kaf kaf
 
+# oc
+command -v oc &> /dev/null && . <(oc completion zsh); compdef _oc oc
+
 # watch
 alias watch="watch "
 alias w="watch -n 0.3 "
