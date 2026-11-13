@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Show hostname in prompt
 PROMPT="%{$fg[yellow]%}%m%{$reset_color%} $PROMPT"
+PROMPT="${PROMPT//➜%\} /➜%\}}"
 
 
 # ~/bin
