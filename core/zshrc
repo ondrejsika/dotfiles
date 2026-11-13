@@ -6,6 +6,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git kube-ps1 docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+# Show hostname in prompt
+PROMPT="%{$fg[yellow]%}%m%{$reset_color%} $PROMPT"
+
 
 # ~/bin
 
