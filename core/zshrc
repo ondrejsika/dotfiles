@@ -7,8 +7,8 @@ plugins=(git kube-ps1 docker docker-compose zsh-autosuggestions zsh-syntax-highl
 source $ZSH/oh-my-zsh.sh
 
 # Show hostname in prompt
-PROMPT="%{$fg[yellow]%}%m%{$reset_color%} $PROMPT"
-PROMPT="${PROMPT//➜%\} /➜%\}}"
+PROMPT="%{$fg[yellow]%}%m%{$reset_color%} %(?:%{$fg_bold[green]%}%1{➜%}:%{$fg_bold[red]%}%1{➜%}) %{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT+=' $(git_prompt_info)'
 
 
 # ~/bin
